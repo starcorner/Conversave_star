@@ -1,0 +1,154 @@
+{
+    "sourceFile": "src/utils/request.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 34,
+            "patches": [
+                {
+                    "date": 1685861574125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685861858221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,15 +48,8 @@\n         MessageBox.confirm('登录已超时，请重新登录', '确认登录', {\n           confirmButtonText: '重新登录',\n           cancelButtonText: '取消',\n           type: 'warning'\n-        }).then(() => {\n-          const url = res.loginurl;\n-          window.location.href = loginurl\n-          // store.dispatch('user/resetToken').then(() => {\n-          //   location.reload()\n-          // }\n-          // )\n         })\n       }\n       return Promise.reject(new Error(error.msg || 'Error'))\n     }\n"
+                },
+                {
+                    "date": 1685861882821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,18 +40,9 @@\n         type: 'error',\n         duration: 5 * 1000\n       })\n \n-      // 608: not logged in\n-      // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;\n-      if (error.response === 608 || error.response === 50008 || error.response === 50012 || error.response === 50014 || error.response === 5000) {\n-        // to re-login\n-        MessageBox.confirm('登录已超时，请重新登录', '确认登录', {\n-          confirmButtonText: '重新登录',\n-          cancelButtonText: '取消',\n-          type: 'warning'\n-        })\n-      }\n+\n       return Promise.reject(new Error(error.msg || 'Error'))\n     }\n     return Promise.reject(error)\n   }\n"
+                },
+                {
+                    "date": 1685861889183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,8 @@\n         type: 'error',\n         duration: 5 * 1000\n       })\n \n-\n       return Promise.reject(new Error(error.msg || 'Error'))\n     }\n     return Promise.reject(error)\n   }\n"
+                },
+                {
+                    "date": 1685862088573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n // request interceptor\n service.interceptors.request.use(\n   config => {\n     // config.headers['Content-Type'] = 'application/json;charset=UTF-8'\n-    config.headers['didi-header-rid'] = gorin()\n+    config.headers['Authorization'] = gorin()\n     return config\n   }, error => {\n     // do something with request error\n     console.log(error) // for debug\n"
+                },
+                {
+                    "date": 1685862117666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n // request interceptor\n service.interceptors.request.use(\n   config => {\n     // config.headers['Content-Type'] = 'application/json;charset=UTF-8'\n-    config.headers['Authorization'] = gorin()\n+    config.headers['Authorization'] = \n     return config\n   }, error => {\n     // do something with request error\n     console.log(error) // for debug\n"
+                },
+                {
+                    "date": 1685862125007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n // request interceptor\n service.interceptors.request.use(\n   config => {\n     // config.headers['Content-Type'] = 'application/json;charset=UTF-8'\n-    config.headers['Authorization'] = \n+    config.headers['Authorization'] = Bearer \"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\"\n     return config\n   }, error => {\n     // do something with request error\n     console.log(error) // for debug\n"
+                },
+                {
+                    "date": 1685862131480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n // request interceptor\n service.interceptors.request.use(\n   config => {\n     // config.headers['Content-Type'] = 'application/json;charset=UTF-8'\n-    config.headers['Authorization'] = Bearer \"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\"\n+    config.headers['Authorization'] = \"Bearer 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\"\n     return config\n   }, error => {\n     // do something with request error\n     console.log(error) // for debug\n"
+                },
+                {
+                    "date": 1685862172986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n }\n // request interceptor\n service.interceptors.request.use(\n   config => {\n-    // config.headers['Content-Type'] = 'application/json;charset=UTF-8'\n+    config.headers['Content-Type'] = 'application/json;charset=UTF-8'\n     config.headers['Authorization'] = \"Bearer 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\"\n     return config\n   }, error => {\n     // do something with request error\n"
+                },
+                {
+                    "date": 1686997522709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import axios from 'axios'\n import { MessageBox, Message } from 'element-ui'\n-import store from '@/store'\n+// import store from '@/store'\n \n axios.defaults.withCredentials = true;\n const service = axios.create({\n   baseURL: process.env.VUE_APP_BACKEND_API,\n"
+                },
+                {
+                    "date": 1686997554197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n   baseURL: process.env.VUE_APP_BACKEND_API,\n   timeout: 15000, // request timeout\n })\n // 自动生成transid\n-function gorin() {\n-  function S4() {\n-    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);\n-  }\n-  return (S4() + S4() + S4() + S4() + S4() + S4() + S4() + S4());\n-}\n+// function gorin() {\n+//   function S4() {\n+//     return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);\n+//   }\n+//   return (S4() + S4() + S4() + S4() + S4() + S4() + S4() + S4());\n+// }\n // request interceptor\n service.interceptors.request.use(\n   config => {\n     config.headers['Content-Type'] = 'application/json;charset=UTF-8'\n"
+                },
+                {
+                    "date": 1686997575647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n-import axios from 'axios'\n-import { MessageBox, Message } from 'element-ui'\n+import axios from \"axios\";\n+import { MessageBox, Message } from \"element-ui\";\n // import store from '@/store'\n \n axios.defaults.withCredentials = true;\n const service = axios.create({\n   baseURL: process.env.VUE_APP_BACKEND_API,\n-  timeout: 15000, // request timeout\n-})\n+  timeout: 15000 // request timeout\n+});\n // 自动生成transid\n // function gorin() {\n //   function S4() {\n //     return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);\n@@ -16,35 +16,37 @@\n // }\n // request interceptor\n service.interceptors.request.use(\n   config => {\n-    config.headers['Content-Type'] = 'application/json;charset=UTF-8'\n-    config.headers['Authorization'] = \"Bearer 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\"\n-    return config\n-  }, error => {\n+    config.headers[\"Content-Type\"] = \"application/json;charset=UTF-8\";\n+    config.headers[\"Authorization\"] =\n+      \"Bearer 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\";\n+    return config;\n+  },\n+  error => {\n     // do something with request error\n-    console.log(error) // for debug\n-    MessageBox.alert(error, '系统提示')\n-    Promise.reject(error)\n+    console.log(error); // for debug\n+    MessageBox.alert(error, \"系统提示\");\n+    Promise.reject(error);\n   }\n-)\n+);\n // response interceptor\n service.interceptors.response.use(\n   response => {\n-    const res = response.data\n-    return res\n+    const res = response.data;\n+    return res;\n   },\n   error => {\n     if (error.response === undefined && error.response !== 200) {\n       Message({\n-        message: error.msg || 'Error',\n-        type: 'error',\n+        message: error.msg || \"Error\",\n+        type: \"error\",\n         duration: 5 * 1000\n-      })\n+      });\n \n-      return Promise.reject(new Error(error.msg || 'Error'))\n+      return Promise.reject(new Error(error.msg || \"Error\"));\n     }\n-    return Promise.reject(error)\n+    return Promise.reject(error);\n   }\n-)\n+);\n \n-export default service\n+export default service;\n"
+                },
+                {
+                    "date": 1686998225627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import axios from \"axios\";\n import { MessageBox, Message } from \"element-ui\";\n // import store from '@/store'\n \n-axios.defaults.withCredentials = true;\n+axios.defaults.withCredentials = false;\n const service = axios.create({\n   baseURL: process.env.VUE_APP_BACKEND_API,\n   timeout: 15000 // request timeout\n });\n"
+                },
+                {
+                    "date": 1686998243494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n // import store from '@/store'\n \n axios.defaults.withCredentials = false;\n const service = axios.create({\n-  baseURL: process.env.VUE_APP_BACKEND_API,\n+  baseURL: '',\n   timeout: 15000 // request timeout\n });\n // 自动生成transid\n // function gorin() {\n"
+                },
+                {
+                    "date": 1686998886933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n axios.defaults.withCredentials = false;\n const service = axios.create({\n   baseURL: '',\n-  timeout: 15000 // request timeout\n+  timeout: 1000 // request timeout\n });\n // 自动生成transid\n // function gorin() {\n //   function S4() {\n"
+                },
+                {
+                    "date": 1686998896193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n axios.defaults.withCredentials = false;\n const service = axios.create({\n   baseURL: '',\n-  timeout: 1000 // request timeout\n+  timeout: 20000 // request timeout\n });\n // 自动生成transid\n // function gorin() {\n //   function S4() {\n"
+                },
+                {
+                    "date": 1686998901787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n axios.defaults.withCredentials = false;\n const service = axios.create({\n   baseURL: '',\n-  timeout: 20000 // request timeout\n+  timeout: 30000 // request timeout\n });\n // 自动生成transid\n // function gorin() {\n //   function S4() {\n"
+                },
+                {
+                    "date": 1687165302452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n   },\n   error => {\n     if (error.response === undefined && error.response !== 200) {\n       Message({\n-        message: error.msg || \"Error\",\n+        message: error.response || \"Error\",\n         type: \"error\",\n         duration: 5 * 1000\n       });\n \n"
+                },
+                {
+                    "date": 1687165309946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         type: \"error\",\n         duration: 5 * 1000\n       });\n \n-      return Promise.reject(new Error(error.msg || \"Error\"));\n+      return Promise.reject(new Error(error.response));\n     }\n     return Promise.reject(error);\n   }\n );\n"
+                },
+                {
+                    "date": 1687167414790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n axios.defaults.withCredentials = false;\n const service = axios.create({\n   baseURL: '',\n-  timeout: 30000 // request timeout\n+  timeout: 40000 // request timeout\n });\n // 自动生成transid\n // function gorin() {\n //   function S4() {\n"
+                },
+                {
+                    "date": 1687251333142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n // response interceptor\n service.interceptors.response.use(\n   response => {\n     const res = response.data;\n+    \n     return res;\n   },\n   error => {\n     if (error.response === undefined && error.response !== 200) {\n"
+                },
+                {
+                    "date": 1687251347372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n // response interceptor\n service.interceptors.response.use(\n   response => {\n     const res = response.data;\n-    \n+    console.log(\"响应的数据为\")\n     return res;\n   },\n   error => {\n     if (error.response === undefined && error.response !== 200) {\n"
+                },
+                {
+                    "date": 1687251353461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n // response interceptor\n service.interceptors.response.use(\n   response => {\n     const res = response.data;\n-    console.log(\"响应的数据为\")\n+    console.log(\"响应的数据为:\",)\n     return res;\n   },\n   error => {\n     if (error.response === undefined && error.response !== 200) {\n"
+                },
+                {
+                    "date": 1687251374810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,13 +32,14 @@\n // response interceptor\n service.interceptors.response.use(\n   response => {\n     const res = response.data;\n-    console.log(\"响应的数据为:\",)\n+    console.log(\"响应的数据为:\",res)\n     return res;\n   },\n   error => {\n     if (error.response === undefined && error.response !== 200) {\n+      \n       Message({\n         message: error.response || \"Error\",\n         type: \"error\",\n         duration: 5 * 1000\n"
+                },
+                {
+                    "date": 1687251382284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     return res;\n   },\n   error => {\n     if (error.response === undefined && error.response !== 200) {\n-      \n+      let message \n       Message({\n         message: error.response || \"Error\",\n         type: \"error\",\n         duration: 5 * 1000\n"
+                },
+                {
+                    "date": 1687251398920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     return res;\n   },\n   error => {\n     if (error.response === undefined && error.response !== 200) {\n-      let message \n+      let message = \"请求失败，请稍后再试\"\n       Message({\n         message: error.response || \"Error\",\n         type: \"error\",\n         duration: 5 * 1000\n"
+                },
+                {
+                    "date": 1687251416981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n   error => {\n     if (error.response === undefined && error.response !== 200) {\n       let message = \"请求失败，请稍后再试\"\n       Message({\n-        message: error.response || \"Error\",\n+        message: message + error.response || \"Error\",\n         type: \"error\",\n         duration: 5 * 1000\n       });\n \n"
+                },
+                {
+                    "date": 1687251427738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n // import store from '@/store'\n \n axios.defaults.withCredentials = false;\n const service = axios.create({\n-  baseURL: '',\n+  baseURL: \"\",\n   timeout: 40000 // request timeout\n });\n // 自动生成transid\n // function gorin() {\n@@ -32,14 +32,14 @@\n // response interceptor\n service.interceptors.response.use(\n   response => {\n     const res = response.data;\n-    console.log(\"响应的数据为:\",res)\n+    console.log(\"响应的数据为:\", res);\n     return res;\n   },\n   error => {\n     if (error.response === undefined && error.response !== 200) {\n-      let message = \"请求失败，请稍后再试\"\n+      let message = \"请求失败，请稍后再试\";\n       Message({\n         message: message + error.response || \"Error\",\n         type: \"error\",\n         duration: 5 * 1000\n"
+                },
+                {
+                    "date": 1687251451856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n         type: \"error\",\n         duration: 5 * 1000\n       });\n \n-      return Promise.reject(new Error(error.response));\n+      return Promise.reject(new Error(error.response.cp));\n     }\n     return Promise.reject(error);\n   }\n );\n"
+                },
+                {
+                    "date": 1687251466650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,10 +44,20 @@\n         type: \"error\",\n         duration: 5 * 1000\n       });\n \n-      return Promise.reject(new Error(error.response.cp));\n+      return Promise.reject(new Error(error.response));\n     }\n+    if (error.response === undefined && error.response !== 200) {\n+      let message = \"请求失败，请稍后再试\";\n+      Message({\n+        message: message + error.response || \"Error\",\n+        type: \"error\",\n+        duration: 5 * 1000\n+      });\n+\n+      return Promise.reject(new Error(error.response));\n+    }\n     return Promise.reject(error);\n   }\n );\n \n"
+                },
+                {
+                    "date": 1687251614503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n       });\n \n       return Promise.reject(new Error(error.response));\n     }\n-    if (error.response === undefined && error.response !== 200) {\n+    if (error.response === 429 && error.response !== 200) {\n       let message = \"请求失败，请稍后再试\";\n       Message({\n         message: message + error.response || \"Error\",\n         type: \"error\",\n"
+                },
+                {
+                    "date": 1687251620205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n       });\n \n       return Promise.reject(new Error(error.response));\n     }\n-    if (error.response === 429 && error.response !== 200) {\n+    if (error.response === 429 && error.response === 200) {\n       let message = \"请求失败，请稍后再试\";\n       Message({\n         message: message + error.response || \"Error\",\n         type: \"error\",\n"
+                },
+                {
+                    "date": 1687251627907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n       });\n \n       return Promise.reject(new Error(error.response));\n     }\n-    if (error.response === 429 && error.response === 200) {\n+    if (error.response === 429 && error.response === 403) {\n       let message = \"请求失败，请稍后再试\";\n       Message({\n         message: message + error.response || \"Error\",\n         type: \"error\",\n"
+                },
+                {
+                    "date": 1687251640812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n \n       return Promise.reject(new Error(error.response));\n     }\n     if (error.response === 429 && error.response === 403) {\n-      let message = \"请求失败，请稍后再试\";\n+      let message = \"请求太频繁，请稍等\";\n       Message({\n         message: message + error.response || \"Error\",\n         type: \"error\",\n         duration: 5 * 1000\n"
+                },
+                {
+                    "date": 1687251649983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n \n       return Promise.reject(new Error(error.response));\n     }\n     if (error.response === 429 && error.response === 403) {\n-      let message = \"请求太频繁，请稍等\";\n+      let message = \"请求太频繁，请稍等几分钟后chong shi\";\n       Message({\n         message: message + error.response || \"Error\",\n         type: \"error\",\n         duration: 5 * 1000\n"
+                }
+            ],
+            "date": 1685861574125,
+            "name": "Commit-0",
+            "content": "import axios from 'axios'\nimport { MessageBox, Message } from 'element-ui'\nimport store from '@/store'\n\naxios.defaults.withCredentials = true;\nconst service = axios.create({\n  baseURL: process.env.VUE_APP_BACKEND_API,\n  timeout: 15000, // request timeout\n})\n// 自动生成transid\nfunction gorin() {\n  function S4() {\n    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);\n  }\n  return (S4() + S4() + S4() + S4() + S4() + S4() + S4() + S4());\n}\n// request interceptor\nservice.interceptors.request.use(\n  config => {\n    // config.headers['Content-Type'] = 'application/json;charset=UTF-8'\n    config.headers['didi-header-rid'] = gorin()\n    return config\n  }, error => {\n    // do something with request error\n    console.log(error) // for debug\n    MessageBox.alert(error, '系统提示')\n    Promise.reject(error)\n  }\n)\n// response interceptor\nservice.interceptors.response.use(\n  response => {\n    const res = response.data\n    return res\n  },\n  error => {\n    if (error.response === undefined && error.response !== 200) {\n      Message({\n        message: error.msg || 'Error',\n        type: 'error',\n        duration: 5 * 1000\n      })\n\n      // 608: not logged in\n      // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;\n      if (error.response === 608 || error.response === 50008 || error.response === 50012 || error.response === 50014 || error.response === 5000) {\n        // to re-login\n        MessageBox.confirm('登录已超时，请重新登录', '确认登录', {\n          confirmButtonText: '重新登录',\n          cancelButtonText: '取消',\n          type: 'warning'\n        }).then(() => {\n          const url = res.loginurl;\n          window.location.href = loginurl\n          // store.dispatch('user/resetToken').then(() => {\n          //   location.reload()\n          // }\n          // )\n        })\n      }\n      return Promise.reject(new Error(error.msg || 'Error'))\n    }\n    return Promise.reject(error)\n  }\n)\n\nexport default service\n"
+        }
+    ]
+}

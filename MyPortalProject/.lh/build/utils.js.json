@@ -1,0 +1,34 @@
+{
+    "sourceFile": "build/utils.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1684573440736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1684573448032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   const cssLoader = {\n     loader: 'css-loader',\n     options: {\n       sourceMap: options.sourceMap。\n-      options: { sourceMap: options.sourceMap, plugins: [],\n+       plugins: [],\n     }\n   }\n \n   const postcssLoader = {\n"
+                },
+                {
+                    "date": 1684573453677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n \n   const cssLoader = {\n     loader: 'css-loader',\n     options: {\n-      sourceMap: options.sourceMap。\n+      sourceMap: options.sourceMap,\n        plugins: [],\n     }\n   }\n \n"
+                },
+                {
+                    "date": 1684573518319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   const cssLoader = {\n     loader: 'css-loader',\n     options: {\n       sourceMap: options.sourceMap,\n-       plugins: [],\n+      plugins: [],\n     }\n   }\n \n   const postcssLoader = {\n"
+                },
+                {
+                    "date": 1684573892863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,10 @@\n \n   const postcssLoader = {\n     loader: 'postcss-loader',\n     options: {\n-      sourceMap: options.sourceMap\n+      sourceMap: options.sourceMap,\n+      plugins: []\n     }\n   }\n \n   // generate loader string to be used with extract text plugin\n"
+                }
+            ],
+            "date": 1684573440736,
+            "name": "Commit-0",
+            "content": "'use strict'\nconst path = require('path')\nconst config = require('../config')\nconst ExtractTextPlugin = require('extract-text-webpack-plugin')\nconst packageConfig = require('../package.json')\n\nexports.assetsPath = function (_path) {\n  const assetsSubDirectory = process.env.NODE_ENV === 'production'\n    ? config.build.assetsSubDirectory\n    : config.dev.assetsSubDirectory\n\n  return path.posix.join(assetsSubDirectory, _path)\n}\n\nexports.cssLoaders = function (options) {\n  options = options || {}\n\n  const cssLoader = {\n    loader: 'css-loader',\n    options: {\n      sourceMap: options.sourceMap。\n      options: { sourceMap: options.sourceMap, plugins: [],\n    }\n  }\n\n  const postcssLoader = {\n    loader: 'postcss-loader',\n    options: {\n      sourceMap: options.sourceMap\n    }\n  }\n\n  // generate loader string to be used with extract text plugin\n  function generateLoaders (loader, loaderOptions) {\n    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]\n\n    if (loader) {\n      loaders.push({\n        loader: loader + '-loader',\n        options: Object.assign({}, loaderOptions, {\n          sourceMap: options.sourceMap\n        })\n      })\n    }\n\n    // Extract CSS when that option is specified\n    // (which is the case during production build)\n    if (options.extract) {\n      return ExtractTextPlugin.extract({\n        use: loaders,\n        fallback: 'vue-style-loader'\n      })\n    } else {\n      return ['vue-style-loader'].concat(loaders)\n    }\n  }\n\n  // https://vue-loader.vuejs.org/en/configurations/extract-css.html\n  return {\n    css: generateLoaders(),\n    postcss: generateLoaders(),\n    less: generateLoaders('less'),\n    sass: generateLoaders('sass', { indentedSyntax: true }),\n    scss: generateLoaders('sass'),\n    stylus: generateLoaders('stylus'),\n    styl: generateLoaders('stylus')\n  }\n}\n\n// Generate loaders for standalone style files (outside of .vue)\nexports.styleLoaders = function (options) {\n  const output = []\n  const loaders = exports.cssLoaders(options)\n\n  for (const extension in loaders) {\n    const loader = loaders[extension]\n    output.push({\n      test: new RegExp('\\\\.' + extension + '$'),\n      use: loader\n    })\n  }\n\n  return output\n}\n\nexports.createNotifierCallback = () => {\n  const notifier = require('node-notifier')\n\n  return (severity, errors) => {\n    if (severity !== 'error') return\n\n    const error = errors[0]\n    const filename = error.file && error.file.split('!').pop()\n\n    notifier.notify({\n      title: packageConfig.name,\n      message: severity + ': ' + error.name,\n      subtitle: filename || '',\n      icon: path.join(__dirname, 'logo.png')\n    })\n  }\n}\n"
+        }
+    ]
+}

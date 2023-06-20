@@ -1,0 +1,142 @@
+{
+    "sourceFile": "src/pages/chatHome.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 31,
+            "patches": [
+                {
+                    "date": 1684570336444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1684570341998,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n <el-container>\n     <el-header>Header</el-header>\n     <el-main>Main</el-main>\n   </el-container>\n"
+                },
+                {
+                    "date": 1684570347507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-\n+<template>\n+    \n+</template>\n <el-container>\n     <el-header>Header</el-header>\n     <el-main>Main</el-main>\n   </el-container>\n"
+                },
+                {
+                    "date": 1684570353524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <template>\n-    \n-</template>\n-<el-container>\n+    <el-container>\n     <el-header>Header</el-header>\n     <el-main>Main</el-main>\n   </el-container>\n+    \n+</template>\n+\n   \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684570361124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,6 @@\n <template>\n-    <el-container>\n+  <el-container>\n     <el-header>Header</el-header>\n     <el-main>Main</el-main>\n   </el-container>\n-    \n </template>\n-\n\\ No newline at end of file\n-  \n"
+                },
+                {
+                    "date": 1684570399699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,39 @@\n     <el-header>Header</el-header>\n     <el-main>Main</el-main>\n   </el-container>\n </template>\n+<style>\n+  .el-header, .el-footer {\n+    background-color: #B3C0D1;\n+    color: #333;\n+    text-align: center;\n+    line-height: 60px;\n+  }\n+  \n+  .el-aside {\n+    background-color: #D3DCE6;\n+    color: #333;\n+    text-align: center;\n+    line-height: 200px;\n+  }\n+  \n+  .el-main {\n+    background-color: #E9EEF3;\n+    color: #333;\n+    text-align: center;\n+    line-height: 160px;\n+  }\n+  \n+  body > .el-container {\n+    margin-bottom: 40px;\n+  }\n+  \n+  .el-container:nth-child(5) .el-aside,\n+  .el-container:nth-child(6) .el-aside {\n+    line-height: 260px;\n+  }\n+  \n+  .el-container:nth-child(7) .el-aside {\n+    line-height: 320px;\n+  }\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684570496145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,16 @@\n <template>\n   <el-container>\n+    <el-container>\n+  <el-aside width=\"200px\">Aside</el-aside>\n+  <el-container>\n     <el-header>Header</el-header>\n     <el-main>Main</el-main>\n+    <el-footer>Footer</el-footer>\n   </el-container>\n+</el-container>\n </template>\n+\n <style>\n   .el-header, .el-footer {\n     background-color: #B3C0D1;\n     color: #333;\n"
+                },
+                {
+                    "date": 1684570522756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<template>\n+\n   <el-container>\n     <el-container>\n   <el-aside width=\"200px\">Aside</el-aside>\n   <el-container>\n"
+                },
+                {
+                    "date": 1684570567497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,18 @@\n     <el-main>Main</el-main>\n     <el-footer>Footer</el-footer>\n   </el-container>\n </el-container>\n-</template>\n+<script>\n+export default {\n+  name: 'HelloWorld',\n+  data () {\n+    return {\n+      msg: 'Welcome to Your Vue.js App'\n+    }\n+  }\n+}\n+</script>\n \n <style>\n   .el-header, .el-footer {\n     background-color: #B3C0D1;\n"
+                },
+                {
+                    "date": 1684570588339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-\n+tem\n   <el-container>\n     <el-container>\n   <el-aside width=\"200px\">Aside</el-aside>\n   <el-container>\n"
+                },
+                {
+                    "date": 1684570593925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,8 @@\n-tem\n-  <el-container>\n-    <el-container>\n-  <el-aside width=\"200px\">Aside</el-aside>\n-  <el-container>\n-    <el-header>Header</el-header>\n-    <el-main>Main</el-main>\n-    <el-footer>Footer</el-footer>\n-  </el-container>\n-</el-container>\n+<template>\n+    \n+</template>\n+\n <script>\n export default {\n   name: 'HelloWorld',\n   data () {\n"
+                },
+                {
+                    "date": 1684570645740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,50 +1,114 @@\n <template>\n-    \n-</template>\n-\n-<script>\n-export default {\n-  name: 'HelloWorld',\n-  data () {\n-    return {\n-      msg: 'Welcome to Your Vue.js App'\n+    <div class=\"hello\">\n+      <h1>{{ msg }}</h1>\n+      <h2>Essential Links</h2>\n+      <ul>\n+        <li>\n+          <a\n+            href=\"https://vuejs.org\"\n+            target=\"_blank\"\n+          >\n+            Core Docs\n+          </a>\n+        </li>\n+        <li>\n+          <a\n+            href=\"https://forum.vuejs.org\"\n+            target=\"_blank\"\n+          >\n+            Forum\n+          </a>\n+        </li>\n+        <li>\n+          <a\n+            href=\"https://chat.vuejs.org\"\n+            target=\"_blank\"\n+          >\n+            Community Chat\n+          </a>\n+        </li>\n+        <li>\n+          <a\n+            href=\"https://twitter.com/vuejs\"\n+            target=\"_blank\"\n+          >\n+            Twitter\n+          </a>\n+        </li>\n+        <br>\n+        <li>\n+          <a\n+            href=\"http://vuejs-templates.github.io/webpack/\"\n\\ No newline at end of file\n+            target=\"_blank\"\n+          >\n+            Docs for This Template\n+          </a>\n+        </li>\n+      </ul>\n+      <h2>Ecosystem</h2>\n+      <ul>\n+        <li>\n+          <a\n+            href=\"http://router.vuejs.org/\"\n+            target=\"_blank\"\n+          >\n+            vue-router\n+          </a>\n+        </li>\n+        <li>\n+          <a\n+            href=\"http://vuex.vuejs.org/\"\n+            target=\"_blank\"\n+          >\n+            vuex\n+          </a>\n+        </li>\n+        <li>\n+          <a\n+            href=\"http://vue-loader.vuejs.org/\"\n+            target=\"_blank\"\n+          >\n+            vue-loader\n+          </a>\n+        </li>\n+        <li>\n+          <a\n+            href=\"https://github.com/vuejs/awesome-vue\"\n+            target=\"_blank\"\n+          >\n+            awesome-vue\n+          </a>\n+        </li>\n+      </ul>\n+    </div>\n+  </template>\n+  \n+  <script>\n+  export default {\n+    name: 'HelloWorld',\n+    data () {\n+      return {\n+        msg: 'Welcome to Your Vue.js App'\n+      }\n     }\n   }\n-}\n-</script>\n-\n-<style>\n-  .el-header, .el-footer {\n-    background-color: #B3C0D1;\n-    color: #333;\n-    text-align: center;\n-    line-height: 60px;\n-  }\n+  </script>\n   \n-  .el-aside {\n-    background-color: #D3DCE6;\n-    color: #333;\n-    text-align: center;\n-    line-height: 200px;\n+  <!-- Add \"scoped\" attribute to limit CSS to this component only -->\n+  <style scoped>\n+  h1, h2 {\n+    font-weight: normal;\n   }\n-  \n-  .el-main {\n-    background-color: #E9EEF3;\n-    color: #333;\n-    text-align: center;\n-    line-height: 160px;\n+  ul {\n+    list-style-type: none;\n+    padding: 0;\n   }\n-  \n-  body > .el-container {\n-    margin-bottom: 40px;\n+  li {\n+    display: inline-block;\n+    margin: 0 10px;\n   }\n-  \n-  .el-container:nth-child(5) .el-aside,\n-  .el-container:nth-child(6) .el-aside {\n-    line-height: 260px;\n+  a {\n+    color: #42b983;\n   }\n-  \n-  .el-container:nth-child(7) .el-aside {\n-    line-height: 320px;\n-  }\n-</style>\n+  </style>\n+  \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1684570676633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,15 @@\n <template>\n+    <el-container>\n+  <el-header>Header</el-header>\n+  <el-container>\n+    <el-aside width=\"200px\">Aside</el-aside>\n+    <el-container>\n+      <el-main>Main</el-main>\n+      <el-footer>Footer</el-footer>\n+    </el-container>\n+  </el-container>\n+</el-container>\n     <div class=\"hello\">\n       <h1>{{ msg }}</h1>\n       <h2>Essential Links</h2>\n       <ul>\n"
+                },
+                {
+                    "date": 1684570682144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       <el-footer>Footer</el-footer>\n     </el-container>\n   </el-container>\n </el-container>\n-    <div class=\"hello\">\n+   \n       <h1>{{ msg }}</h1>\n       <h2>Essential Links</h2>\n       <ul>\n         <li>\n"
+                },
+                {
+                    "date": 1684570689403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <template>\n+     <div class=\"hello\">\n     <el-container>\n   <el-header>Header</el-header>\n   <el-container>\n     <el-aside width=\"200px\">Aside</el-aside>\n"
+                },
+                {
+                    "date": 1684570731712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,125 +1,44 @@\n <template>\n-     <div class=\"hello\">\n+  <div class=\"hello\">\n     <el-container>\n-  <el-header>Header</el-header>\n-  <el-container>\n-    <el-aside width=\"200px\">Aside</el-aside>\n-    <el-container>\n-      <el-main>Main</el-main>\n-      <el-footer>Footer</el-footer>\n+      <el-header>Header</el-header>\n+      <el-container>\n+        <el-aside width=\"200px\">Aside</el-aside>\n+        <el-container>\n+          <el-main>Main</el-main>\n+          <el-footer>Footer</el-footer>\n+        </el-container>\n+      </el-container>\n     </el-container>\n-  </el-container>\n-</el-container>\n-   \n-      <h1>{{ msg }}</h1>\n-      <h2>Essential Links</h2>\n-      <ul>\n-        <li>\n-          <a\n-            href=\"https://vuejs.org\"\n-            target=\"_blank\"\n-          >\n-            Core Docs\n-          </a>\n-        </li>\n-        <li>\n-          <a\n-            href=\"https://forum.vuejs.org\"\n-            target=\"_blank\"\n-          >\n-            Forum\n-          </a>\n-        </li>\n-        <li>\n-          <a\n-            href=\"https://chat.vuejs.org\"\n-            target=\"_blank\"\n-          >\n-            Community Chat\n-          </a>\n-        </li>\n-        <li>\n-          <a\n-            href=\"https://twitter.com/vuejs\"\n-            target=\"_blank\"\n-          >\n-            Twitter\n-          </a>\n-        </li>\n-        <br>\n-        <li>\n-          <a\n-            href=\"http://vuejs-templates.github.io/webpack/\"\n-            target=\"_blank\"\n-          >\n-            Docs for This Template\n-          </a>\n-        </li>\n-      </ul>\n-      <h2>Ecosystem</h2>\n-      <ul>\n-        <li>\n-          <a\n-            href=\"http://router.vuejs.org/\"\n-            target=\"_blank\"\n-          >\n-            vue-router\n-          </a>\n-        </li>\n-        <li>\n-          <a\n-            href=\"http://vuex.vuejs.org/\"\n-            target=\"_blank\"\n-          >\n-            vuex\n-          </a>\n-        </li>\n-        <li>\n-          <a\n-            href=\"http://vue-loader.vuejs.org/\"\n-            target=\"_blank\"\n-          >\n-            vue-loader\n-          </a>\n-        </li>\n-        <li>\n-          <a\n-            href=\"https://github.com/vuejs/awesome-vue\"\n-            target=\"_blank\"\n-          >\n-            awesome-vue\n-          </a>\n-        </li>\n-      </ul>\n-    </div>\n-  </template>\n-  \n-  <script>\n-  export default {\n-    name: 'HelloWorld',\n-    data () {\n-      return {\n-        msg: 'Welcome to Your Vue.js App'\n-      }\n-    }\n+  </div>\n+</template>\n+\n+<script>\n+export default {\n+  name: \"HelloWorld\",\n+  data() {\n+    return {\n+      msg: \"Welcome to Your Vue.js App\"\n+    };\n   }\n-  </script>\n\\ No newline at end of file\n-  \n-  <!-- Add \"scoped\" attribute to limit CSS to this component only -->\n-  <style scoped>\n-  h1, h2 {\n-    font-weight: normal;\n-  }\n-  ul {\n-    list-style-type: none;\n-    padding: 0;\n-  }\n-  li {\n-    display: inline-block;\n-    margin: 0 10px;\n-  }\n-  a {\n-    color: #42b983;\n-  }\n-  </style>\n-  \n+};\n+</script>\n+\n+<!-- Add \"scoped\" attribute to limit CSS to this component only -->\n+<style scoped>\n+h1,\n+h2 {\n+  font-weight: normal;\n+}\n+ul {\n+  list-style-type: none;\n+  padding: 0;\n+}\n+li {\n+  display: inline-block;\n+  margin: 0 10px;\n+}\n+a {\n+  color: #42b983;\n+}\n+</style>\n"
+                },
+                {
+                    "date": 1684570781523,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\n   <div class=\"hello\">\n-    <el-container>\n+\n       <el-header>Header</el-header>\n       <el-container>\n         <el-aside width=\"200px\">Aside</el-aside>\n         <el-container>\n"
+                },
+                {
+                    "date": 1684570787766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n           <el-main>Main</el-main>\n           <el-footer>Footer</el-footer>\n         </el-container>\n       </el-container>\n-    </el-container>\n+ \n   </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1684571056214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,9 @@\n         <el-container>\n           <el-main>Main</el-main>\n           <el-footer>Footer</el-footer>\n         </el-container>\n-      </el-container>\n- \n+      </el-container> \n   </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1684571070610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n <script>\n export default {\n   name: \"HelloWorld\",\n-  data() {\n+   data() {\n     return {\n       msg: \"Welcome to Your Vue.js App\"\n     };\n   }\n"
+                },
+                {
+                    "date": 1684571089841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n <script>\n export default {\n   name: \"HelloWorld\",\n-   data() {\n+data() {\n     return {\n       msg: \"Welcome to Your Vue.js App\"\n     };\n   }\n"
+                },
+                {
+                    "date": 1684571221482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,16 @@\n         <el-container>\n           <el-main>Main</el-main>\n           <el-footer>Footer</el-footer>\n         </el-container>\n-      </el-container> \n+      </el-container>\n   </div>\n </template>\n \n <script>\n export default {\n   name: \"HelloWorld\",\n-data() {\n+  data() {\n     return {\n       msg: \"Welcome to Your Vue.js App\"\n     };\n   }\n"
+                },
+                {
+                    "date": 1684571237232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n <script>\n export default {\n   name: \"HelloWorld\",\n-  data() {\n+  data () {\n     return {\n       msg: \"Welcome to Your Vue.js App\"\n     };\n   }\n"
+                },
+                {
+                    "date": 1684571304428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n       <el-header>Header</el-header>\n       <el-container>\n         <el-aside width=\"200px\">Aside</el-aside>\n-        <el-container>\n+        <el-container he>\n           <el-main>Main</el-main>\n           <el-footer>Footer</el-footer>\n         </el-container>\n       </el-container>\n"
+                },
+                {
+                    "date": 1684571311436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n       <el-header>Header</el-header>\n       <el-container>\n         <el-aside width=\"200px\">Aside</el-aside>\n-        <el-container he>\n+        <el-container height=\"\"400px>\n           <el-main>Main</el-main>\n           <el-footer>Footer</el-footer>\n         </el-container>\n       </el-container>\n"
+                },
+                {
+                    "date": 1684571364598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n <template>\n+    el\n   <div class=\"hello\">\n \n       <el-header>Header</el-header>\n       <el-container>\n         <el-aside width=\"200px\">Aside</el-aside>\n-        <el-container height=\"\"400px>\n+        <el-container height=\"400px\">\n           <el-main>Main</el-main>\n           <el-footer>Footer</el-footer>\n         </el-container>\n       </el-container>\n"
+                },
+                {
+                    "date": 1684571370382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,9 @@\n <template>\n-    el\n+    \n   <div class=\"hello\">\n \n-      <el-header>Header</el-header>\n-      <el-container>\n-        <el-aside width=\"200px\">Aside</el-aside>\n-        <el-container height=\"400px\">\n-          <el-main>Main</el-main>\n-          <el-footer>Footer</el-footer>\n-        </el-container>\n-      </el-container>\n+\n   </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1684571376809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\n     \n   <div class=\"hello\">\n+    <el-row></el-row>\n \n-\n   </div>\n </template>\n \n <script>\n"
+                },
+                {
+                    "date": 1684571385989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n <template>\n     \n   <div class=\"hello\">\n-    <el-row></el-row>\n+    <el-row>\n+        <el-col>\n+            \n+        </el-col>\n+    </el-row>\n \n   </div>\n </template>\n \n"
+                },
+                {
+                    "date": 1684571391372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\n     \n   <div class=\"hello\">\n     <el-row>\n-        <el-col>\n-            \n+        <el-col :span=\"\">\n+\n         </el-col>\n     </el-row>\n \n   </div>\n"
+                },
+                {
+                    "date": 1684571402780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     \n   <div class=\"hello\">\n     <el-row>\n         <el-col :span=\"8\">\n-            el-inpu\n+            el-input\n         </el-col>\n     </el-row>\n \n   </div>\n"
+                },
+                {
+                    "date": 1686998655620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,9 +131,9 @@\n         if (this.choices) {\n             this.choices.forEach((item, index) => {\n             message = item.message\n             if (message.length > 1) {\n-                this.\n+                this.d\n                 this.new_cate.push(item[0] + \"/\" + item[1]);\n             }\n         });\n       }\n"
+                }
+            ],
+            "date": 1684570336444,
+            "name": "Commit-0",
+            "content": "<el-container>\n    <el-header>Header</el-header>\n    <el-main>Main</el-main>\n  </el-container>\n  "
+        }
+    ]
+}

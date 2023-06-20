@@ -1,0 +1,22 @@
+{
+    "sourceFile": ".gitignore",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1684574111061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1684574117518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n .DS_Store\n node_modules/\n /dist/\n // eslint-disable-next-line\n+/* eslint-disable */\n npm-debug.log*\n yarn-debug.log*\n yarn-error.log*\n \n"
+                }
+            ],
+            "date": 1684574111061,
+            "name": "Commit-0",
+            "content": ".DS_Store\nnode_modules/\n/dist/\n// eslint-disable-next-line\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n\n# Editor directories and files\n.idea\n.vscode\n*.suo\n*.ntvs*\n*.njsproj\n*.sln\n"
+        }
+    ]
+}

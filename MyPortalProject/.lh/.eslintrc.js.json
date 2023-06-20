@@ -1,0 +1,62 @@
+{
+    "sourceFile": ".eslintrc.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1684570880670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1684570902504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   // required to lint *.vue files\n   plugins: [\n     'vue'\n   ],\n-  'semi': 0\n+  \n   // add your custom rules here\n   rules: {\n     // allow async-await\n     'generator-star-spacing': 'off',\n"
+                },
+                {
+                    "date": 1684570976139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,11 @@\n   \n   // add your custom rules here\n   rules: {\n     // allow async-await\n+    'quotes'\n     'generator-star-spacing': 'off',\n+    'semi': 0,\n     // allow debugger during development\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1684570991965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   \n   // add your custom rules here\n   rules: {\n     // allow async-await\n-    'quotes'\n+    'quotes': 'off'\n     'generator-star-spacing': 'off',\n     'semi': 0,\n     // allow debugger during development\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n"
+                },
+                {
+                    "date": 1684570998665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,11 @@\n   \n   // add your custom rules here\n   rules: {\n     // allow async-await\n-    'quotes': 'off'\n+    'quotes': 'off',\n     'generator-star-spacing': 'off',\n-    'semi': 0,\n+    'semi': ,\n     // allow debugger during development\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1684571011131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,10 @@\n   rules: {\n     // allow async-await\n     'quotes': 'off',\n     'generator-star-spacing': 'off',\n-    'semi': ,\n+    'semi': 'off',\n+    'comma'\n     // allow debugger during development\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1684571016724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     // allow async-await\n     'quotes': 'off',\n     'generator-star-spacing': 'off',\n     'semi': 'off',\n-    'comma'\n+    'comma-dangle'\n     // allow debugger during development\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1684571029064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     // allow async-await\n     'quotes': 'off',\n     'generator-star-spacing': 'off',\n     'semi': 'off',\n-    'comma-dangle'\n+    'comma-dangle': 'off'\n     // allow debugger during development\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1684571147685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,10 @@\n     // allow async-await\n     'quotes': 'off',\n     'generator-star-spacing': 'off',\n     'semi': 'off',\n-    'comma-dangle': 'off'\n+    'comma-dangle': 'off',\n+    ‘space\n     // allow debugger during development\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1684571155195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     'quotes': 'off',\n     'generator-star-spacing': 'off',\n     'semi': 'off',\n     'comma-dangle': 'off',\n-    ‘space\n+    'space-before-\n     // allow debugger during development\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1684571167845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     'quotes': 'off',\n     'generator-star-spacing': 'off',\n     'semi': 'off',\n     'comma-dangle': 'off',\n-    'space-before-\n+    'space-before-function-paren\n     // allow debugger during development\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n   }\n }\n"
+                },
+                {
+                    "date": 1684571176305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     'quotes': 'off',\n     'generator-star-spacing': 'off',\n     'semi': 'off',\n     'comma-dangle': 'off',\n-    'space-before-function-paren\n+    'space-before-function-paren':0,\n     // allow debugger during development\n     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n   }\n }\n"
+                }
+            ],
+            "date": 1684570880670,
+            "name": "Commit-0",
+            "content": "// https://eslint.org/docs/user-guide/configuring\n\nmodule.exports = {\n  root: true,\n  parserOptions: {\n    parser: 'babel-eslint'\n  },\n  env: {\n    browser: true,\n  },\n  extends: [\n    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention\n    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.\n    'plugin:vue/essential', \n    // https://github.com/standard/standard/blob/master/docs/RULES-en.md\n    'standard'\n  ],\n  // required to lint *.vue files\n  plugins: [\n    'vue'\n  ],\n  'semi': 0\n  // add your custom rules here\n  rules: {\n    // allow async-await\n    'generator-star-spacing': 'off',\n    // allow debugger during development\n    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'\n  }\n}\n"
+        }
+    ]
+}

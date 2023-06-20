@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/main.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1684572725594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1684572737902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n // The Vue build version to load with the `import` command\n // (runtime-only or standalone) has been set in webpack.base.conf with an alias.\n-import Vue from 'vue';\n+\n import ElementUI from 'element-ui';\n import 'element-ui/lib/theme-chalk/index.css';\n import App from './App.vue';\n import Vue from 'vue'\n"
+                },
+                {
+                    "date": 1684572743543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,7 @@\n // The Vue build version to load with the `import` command\n // (runtime-only or standalone) has been set in webpack.base.conf with an alias.\n \n-import ElementUI from 'element-ui';\n-import 'element-ui/lib/theme-chalk/index.css';\n import App from './App.vue';\n import Vue from 'vue'\n import App from './App'\n import router from './router'\n"
+                },
+                {
+                    "date": 1684572759193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,13 @@\n import App from './App.vue';\n import Vue from 'vue'\n import App from './App'\n import router from './router'\n+import ElementUI from 'element-ui';\n+import 'element-ui/lib/theme-chalk/index.css';\n \n Vue.config.productionTip = false\n+Vue.use(ElementUI);\n \n /* eslint-disable no-new */\n new Vue({\n   el: '#app',\n"
+                },
+                {
+                    "date": 1684573057686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,7 @@\n new Vue({\n   el: '#app',\n   router,\n   components: { App },\n+  render: h => h(App)\n   template: '<App/>'\n })\n"
+                },
+                {
+                    "date": 1684573063100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n new Vue({\n   el: '#app',\n   router,\n   components: { App },\n-  render: h => h(App)\n+  render: h => h(App),\n   template: '<App/>'\n })\n"
+                },
+                {
+                    "date": 1684573089789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n // The Vue build version to load with the `import` command\n // (runtime-only or standalone) has been set in webpack.base.conf with an alias.\n \n-import App from './App.vue';\n+// import App from './App.vue';\n import Vue from 'vue'\n import App from './App'\n import router from './router'\n import ElementUI from 'element-ui';\n"
+                },
+                {
+                    "date": 1684573108395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n // (runtime-only or standalone) has been set in webpack.base.conf with an alias.\n \n // import App from './App.vue';\n import Vue from 'vue'\n-import App from './App'\n+// import App from './App'\n import router from './router'\n import ElementUI from 'element-ui';\n import 'element-ui/lib/theme-chalk/index.css';\n \n"
+                }
+            ],
+            "date": 1684572725594,
+            "name": "Commit-0",
+            "content": "// The Vue build version to load with the `import` command\n// (runtime-only or standalone) has been set in webpack.base.conf with an alias.\nimport Vue from 'vue';\nimport ElementUI from 'element-ui';\nimport 'element-ui/lib/theme-chalk/index.css';\nimport App from './App.vue';\nimport Vue from 'vue'\nimport App from './App'\nimport router from './router'\n\nVue.config.productionTip = false\n\n/* eslint-disable no-new */\nnew Vue({\n  el: '#app',\n  router,\n  components: { App },\n  template: '<App/>'\n})\n"
+        }
+    ]
+}

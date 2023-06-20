@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/api/chat.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1685861825331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685862368003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import request from '@/utils/request'\n \n export function createCase(data) {\n   return request({\n-    url: '',\n+    url: 'https://api.openai.com/v1/chat/completions',\n     method: 'post',\n     data\n   })\n }\n"
+                }
+            ],
+            "date": 1685861825331,
+            "name": "Commit-0",
+            "content": "import request from '@/utils/request'\n\nexport function createCase(data) {\n  return request({\n    url: process.env.VUE_APP_BACKEND_API + '/addCase',\n    method: 'post',\n    data\n  })\n}\n\nexport function fetchCase(data) {\n  return request({\n    url: process.env.VUE_APP_BACKEND_API + '/queryCase',\n    method: 'post',\n    data\n  })\n}"
+        }
+    ]
+}
