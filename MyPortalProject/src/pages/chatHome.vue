@@ -81,7 +81,6 @@
                 </el-col>
                 <el-col :span="'1'">
                   <el-tooltip
-
                     effect="light"
                     content="点我会有小惊喜呦～"
                     placement="top-start"
@@ -106,7 +105,7 @@
                 style="float: left;margin-left: 100px;margin-top: 30px;"
                 :loading="loading"
                 @click="Startquery()"
-                >发送</el-button
+                >{{ buttontext }}</el-button
               >
             </el-col>
             <el-col :span="'1'">
@@ -130,12 +129,13 @@
 
 <script>
 import { sendMsg } from "@/api/chat";
-import { Loading } from "element-ui";
+// import { Loading } from "element-ui";
 export default {
   name: "HelloWorld",
   data() {
     return {
       myData: [],
+      buttontext: "发送",
       loading: false,
       questionMsg: "",
       asklist: [],
@@ -203,6 +203,7 @@ export default {
     Startquery() {
       this.open();
       this.loading = true;
+      this.buttontext = "正在查询，请稍等";
       console.log("sendmsg the msg is:", this.form.dynamicValidateForm);
       let roleset = { role: "system", content: this.system };
       let querylist = [];
@@ -223,17 +224,10 @@ export default {
 
       console.log("data payload is:", data);
 
-      // sendMsg(this.questionMsg)
-      let options = {
-        target: document.querySelector(".radio-label-star"),
-        text: "你的小可爱在努力请求中，再稍等一下...",
-        spinner: "el-icon-loading",
-        // "fullscreen":true,
-        background: "rgba(0, 0, 0, 0.8)"
-      };
-      let loadingInstance = Loading.service(options);
-      // this.$nextTick(() => { // 以服务的方式调用的 Loading 需要异步关闭
-      loadingInstance.close();
+      // let loadingInstance = Loading.service(options);
+      // // this.$nextTick(() => { // 以服务的方式调用的 Loading 需要异步关闭
+      // loadingInstance.close();
+
       // });
       sendMsg(data).then(response => {
         // {
@@ -263,12 +257,12 @@ export default {
         //   }
         // });
         console.log("gbt 响应是:", response.choices);
-        loadingInstance.close();
         this.choices = response.choices;
         let askcontent = "";
 
         if (this.choices) {
           this.loading = false;
+          this.buttontext = "发送";
           this.choices.forEach((item, index) => {
             console.log("choices", this.choices);
             // let message = item.message;
@@ -308,6 +302,7 @@ export default {
       var index = this.form.dynamicValidateForm.indexOf(item);
       if (index !== -1) {
         this.form.dynamicValidateForm.splice(index, 1);
+        this.saveData(this.form.dynamicValidateForm);
       }
     },
 
